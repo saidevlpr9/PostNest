@@ -1,12 +1,13 @@
+require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
 const app = express();
-const PORT = 8000;
+const PORT = process.env.PORT || 8000;
 const Blog = require('./models/blog')
 const cookieParser = require("cookie-parser");
 
 mongoose
-  .connect("mongodb+srv://saidevlpr9:0ZTHpnTiN8BF1VC4@cluster0.tlgit.mongodb.net/POSTNEST")
+  .connect(process.env.MONGO_URL)
   .then((e) => console.log("MongoDB Connected"));
 
 const userRoute = require("./routes/user");
