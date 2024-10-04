@@ -7,7 +7,7 @@ const Blog = require('./models/blog')
 const cookieParser = require("cookie-parser");
 
 mongoose
-  .connect(process.env.MONGO_URL)
+  .connect("mongodb+srv://saidevlpr9:0ZTHpnTiN8BF1VC4@cluster0.tlgit.mongodb.net/POSTNEST")
   .then((e) => console.log("MongoDB Connected"));
 
 const userRoute = require("./routes/user");
